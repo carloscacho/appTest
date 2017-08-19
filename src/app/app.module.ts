@@ -8,8 +8,16 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FeedPageModule } from "../pages/feed/feed.module";
+import { IntroPageModule } from "../pages/intro/intro.module";
+import {HttpModule} from "@angular/http"
+import { MoviesProvider } from '../providers/movies/movies';
+import { LocalstorageProvider } from '../providers/localstorage/localstorage';
+
+import firebase from 'firebase';
 
 @NgModule({
   declarations: [
@@ -21,7 +29,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    FeedPageModule,
+    IntroPageModule,
+    HttpModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +46,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MoviesProvider,
+    LocalstorageProvider
   ]
 })
 export class AppModule {}
