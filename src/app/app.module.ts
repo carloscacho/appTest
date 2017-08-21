@@ -19,13 +19,17 @@ import { LocalstorageProvider } from '../providers/localstorage/localstorage';
 
 import firebase from 'firebase';
 
+import { Facebook } from '@ionic-native/facebook';
+import { LoginPage } from "../pages/login/login";
+
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -41,14 +45,16 @@ import firebase from 'firebase';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MoviesProvider,
-    LocalstorageProvider
+    LocalstorageProvider,
+    Facebook
   ]
 })
 export class AppModule {}

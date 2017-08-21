@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3 center>
+    Facebook Auth
+  </h3>
+
+  <button ion-button center (click)="facebookLogin()">
+    <ion-icon name="logo-facebook"></ion-icon>
+    Log In with Facebook
+  </button>
+
+  <ion-card *ngIf="userProfile">
+    <img [src]="userProfile.photoURL"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ userProfile.displayName }}
+      </ion-card-title>
+      <p>
+        The UID for this new user is {{userProfile.token}} and the email is {{userProfile.email}}
+        annnndddd your token is {{token}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
