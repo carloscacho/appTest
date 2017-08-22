@@ -12,8 +12,8 @@
   </h3>
 
   <button ion-button center (click)="facebookLogin()">
-    <ion-icon name="logo-facebook"></ion-icon>
-    Log In with Facebook
+    <ion-icon class="icon-space" name="logo-facebook"> </ion-icon>
+       <p>Log-In with Facebook </p>
   </button>
 
   <ion-card *ngIf="userProfile">
@@ -23,7 +23,7 @@
         {{ userProfile.displayName }}
       </ion-card-title>
       <p>
-        The UID for this new user is {{userProfile.token}} and the email is {{userProfile.email}}
+        The UID for this new user is {{userProfile.uid}} and the email is {{userProfile.email}}
         annnndddd your token is {{token}}
       </p>
     </ion-card-content>

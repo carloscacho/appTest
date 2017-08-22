@@ -9,6 +9,14 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class LocalstorageProvider {
+  public config = {
+    showSlides: false,
+    name: "",
+    username: "",
+    token: "", 
+    pictureUrl: "",
+    userId: ""
+  }
 
   constructor() {
 
@@ -21,13 +29,15 @@ export class LocalstorageProvider {
 
   //gravar dados no local storage
   setConfigData(showSlides?: boolean, name?: string, username?: string,
-    token?: string) {
+    token?: string, pictureUrl?:string, userId?:string) {
 
     let config = {
       showSlides: false,
       name: "",
       username: "",
-      token: ""
+      token: "", 
+      pictureUrl: "",
+      userId: ""
     }
 
     if (showSlides) {
@@ -44,6 +54,14 @@ export class LocalstorageProvider {
 
     if (token) {
       config.token = token;
+    }
+    
+    if (pictureUrl) {
+      config.pictureUrl = pictureUrl;
+    }
+
+    if(userId){
+      config.userId = userId;
     }
 
 

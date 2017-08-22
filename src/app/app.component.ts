@@ -6,7 +6,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IntroPage } from "../pages/intro/intro";
 import { LocalstorageProvider} from "../providers/localstorage/localstorage"
 import { TabsPage } from "../pages/tabs/tabs";
-import { LoginPage } from "../pages/login/login";
 import firebase from 'firebase';
 
 
@@ -20,7 +19,9 @@ import firebase from 'firebase';
 export class MyApp {
   rootPage:any;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, LocalstorageProvider: LocalstorageProvider) {
+  constructor(platform: Platform, statusBar: StatusBar,
+     splashScreen: SplashScreen, 
+     LocalstorageProvider: LocalstorageProvider) {
     firebase.initializeApp({
       apiKey: "AIzaSyBi-PhNzJdzDjPcAbX16wTZwcRdMbV_5qo",
       authDomain: "movie-ionic-48e04.firebaseapp.com",
@@ -33,15 +34,20 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
 
-      this.rootPage = LoginPage;
+      this.rootPage = IntroPage;
 
-      //let config = LocalstorageProvider.getConfigData();
-      //if(config = null){
-       // this.rootPage = IntroPage;
-      //  LocalstorageProvider.setConfigData(true);
-      //}else{
-      //  this.rootPage = TabsPage;
-     // }
+     let config = JSON.parse(LocalstorageProvider.getConfigData());
+     if(config != {}){
+       if(config.token != ""){
+        
+        LocalstorageProvider.setConfigData(true);
+        console.log("#config" + config)
+        this.rootPage = TabsPage ;
+       }
+     }else{
+      this.rootPage = IntroPage;
+       
+     }
 
       statusBar.styleDefault();
       splashScreen.hide();

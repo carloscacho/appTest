@@ -8,13 +8,15 @@
 
 
 <ion-content>
-  <ion-slides pager>
+  <ion-slides pager options="options" slider="data.slider">
 
-    <ion-slide>
+    <ion-slide >
       <img src="assets/img/rolo1.png" alt="">
       <h2>What´s Movie</h2>
       <p>Veja as sinopse dos filmes em lançamentos, filmes clasicos de cada genero </p>
-      <a (click)="goToTabsPage()"> Entrar </a>
+      
+      <a (click)="nextSlide()"> continuar </a>
+
     </ion-slide>
 
     <ion-slide>
@@ -22,7 +24,7 @@
 
       <h2>Generos</h2>
       <p>Escolha o seus generos de filmes favaritos, diretores favoritos para melhorar nossa seleção</p>
-      <a (click)="goToTabsPage()"> continuar </a>
+      <a (click)="nextSlide()"> continuar </a>
     </ion-slide>
 
     <ion-slide>
@@ -30,7 +32,7 @@
 
       <h2>Maque os filmes</h2>
       <p>Mostre os filmes que voce Gostou e não gostou, para melhoramos nossa seleção</p>
-      <a (click)="goToTabsPage()"> continuar </a>
+      <a (click)="nextSlide()"> continuar </a>
     </ion-slide>
 
     <ion-slide>
@@ -38,9 +40,14 @@
 
       <h2>Bora lá</h2>
       <p>Faça seu login para começar, Nós iremos avisar quando filmes que você irá gostar for lançado</p>
-      <a (click)="goToTabsPage()"> continuar </a>
+      
+      <button ion-button center (click)="facebookLogin()">
+          <ion-icon class="icon-space" name="logo-facebook"> </ion-icon>
+             <p>Log-In with Facebook </p>
+      </button>
     </ion-slide>
   </ion-slides>
 
 
 </ion-content>
+
