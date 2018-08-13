@@ -7,6 +7,9 @@ Este app é apenas um app teste. não há muitas funcinalidades.
 
 é utlizado a api do [The Movie DB](https://www.themoviedb.org/?language=pt-BR) para carregar as imagens e as sinopse dos filmes em cartaz.
 
+![Tela de Intro](https://github.com/carloscacho/appTest/blob/master/resources/gifs/intro.gif?raw=true)
+![Tela do App, com lista de filmes](https://github.com/carloscacho/appTest/blob/master/resources/gifs/appgif.gif?raw=true)
+
 ### Instalação e compilação:
 
 para que o aplicativo funcione na sua maquina deve estar instalado o npm e o ionic.
