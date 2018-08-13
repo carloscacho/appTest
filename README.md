@@ -1,26 +1,29 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+Esse aplicativo foi desenvolvido utilizando [Ionic](http://ionicframework.com/docs/).
 
-## How to use this template
+## Qual a função do Aplicativo
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+Este app apresenta a lista de filmes que serão exibidos nos cinemas. filmes que estão em cartaz.
+Este app é apenas um app teste. não há muitas funcinalidades.
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+é utlizado a api do [The Movie DB](https://www.themoviedb.org/?language=pt-BR) para carregar as imagens e as sinopse dos filmes em cartaz.
 
-### With the Ionic CLI:
+### Instalação e compilação:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+para que o aplicativo funcione na sua maquina deve estar instalado o npm e o ionic.
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
-```
+para instalar o npm acesse [get npm](https://www.npmjs.com/get-npm)
 
-Then, to run it, cd into `myTabs` and run:
+para instalar o ionic 
 
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+$ npm install -g ionic cordova
 ```
 
-Substitute ios for android if not on a Mac.
+para rodar o aplicativo baixado
+
+```bash
+$ ionic lab
+```
+
+A intro foi desabilitada pois essa opção somente funciona se o app rodar em um celular real.
 
