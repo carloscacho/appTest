@@ -34,20 +34,20 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
 
-      this.rootPage = IntroPage;
+      this.rootPage = TabsPage;
 
-     let config = JSON.parse(LocalstorageProvider.getConfigData());
-     if(config != {}){
-       if(config.token != ""){
+    //  let config = JSON.parse(LocalstorageProvider.getConfigData());
+    //  if(config != {}){
+    //    if(config.token != ""){
         
-        LocalstorageProvider.setConfigData(true);
-        console.log("#config" + config)
-        this.rootPage = TabsPage ;
-       }
-     }else{
-      this.rootPage = IntroPage;
+    //     LocalstorageProvider.setConfigData(true);
+    //     console.log("#config" + config)
+    //     this.rootPage = TabsPage ;
+    //    }
+    //  }else{
+    //   this.rootPage = IntroPage;
        
-     }
+    //  }
 
       statusBar.styleDefault();
       splashScreen.hide();

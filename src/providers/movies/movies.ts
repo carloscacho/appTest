@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MoviesProvider {
   private baseUrl = "https://api.themoviedb.org/3";
-  private last = "/movie/popular?api_key=";
+  private last = "/movie/now_playing?api_key=";
   private key = "69e0345a806addbe84da7a229ad48b8b";
 
   constructor(public http: Http) {
@@ -19,7 +19,7 @@ export class MoviesProvider {
   }
 
   public getLatestMovies(){
-    return this.http.get(this.baseUrl + this.last + this.key + "&language=pt-BR")
+    return this.http.get(this.baseUrl + this.last + this.key + "&language=pt-BR&region=BR")
   }
 
 }
